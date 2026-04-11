@@ -38,16 +38,19 @@ vim.keymap.set("n", "<A-e>", ":Neotree %<CR>")
 vim.keymap.set("n", "<leader>vv", ":botright vnew<CR>")
 vim.keymap.set("n", "<F2>", ":w<CR>")
 vim.keymap.set("i", "<F2>", "<Esc>:w<CR>")
-vim.keymap.set("n", "<A-F3>", ":x<CR>")
+vim.keymap.set("n", "<A-F3>", ":q!<CR>")
 
 vim.keymap.set("n", "<A-S-d>", "yy p<CR>")
 
+vim.keymap.set("n", "<Esc>", ":noh<CR>")
+
+-- @@@ Scroll viewport
 vim.keymap.set("n", "<A-j>", "<C-e>")
 vim.keymap.set("n", "<A-k>", "<C-y>")
 vim.keymap.set("n", "<C-Down>", "<C-e>")
 vim.keymap.set("n", "<C-Up>", "<C-y>")
 
--- Tabs
+-- @@@ Tabs
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>")
 vim.keymap.set("n", "<A-1>", "1gt")
 vim.keymap.set("n", "<A-2>", "2gt")
@@ -58,17 +61,17 @@ vim.keymap.set("n", "<A-6>", "6gt")
 vim.keymap.set("n", "<A-7>", "7gt")
 vim.keymap.set("n", "<A-8>", "8gt")
 vim.keymap.set("n", "<A-9>", "9gt")
-vim.keymap.set("n", "<A-w>", ":tab split<CR>")
+vim.keymap.set("n", "<A-w>", ":tab split<CR> :tabp<CR> :x<CR> :tabn<CR>")
 vim.keymap.set("n", "<A-.>", ":+tabmove<CR>")
 vim.keymap.set("n", "<A-,>", ":-tabmove<CR>")
 
--- Split view navigation
+-- @@@ Split view navigation
 vim.keymap.set("n", "<A-Right>", "<C-w><Right>")
 vim.keymap.set("n", "<A-Left>", "<C-w><Left>")
 vim.keymap.set("n", "<A-Down>", "<C-w><Down>")
 vim.keymap.set("n", "<A-Up>", "<C-w><Up>")
 
--- Jump between breckets
+-- @@@ Jump between breckets
 vim.keymap.set("n", "<C-]>", "%")
 vim.keymap.set("n", "<C-[>", "%")
 
