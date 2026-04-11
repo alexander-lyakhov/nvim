@@ -10,3 +10,6 @@ GitSigns:
 
 Indentline
 	https://github.com/lukas-reineke/indent-blankline.nvim
+
+Telescope File Browser
+	https://github.com/nvim-telescope/telescope-file-browser.nvim

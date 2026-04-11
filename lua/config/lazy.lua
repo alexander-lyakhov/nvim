@@ -88,14 +88,9 @@ require("lazy").setup({
 			'nvim-telescope/telescope-file-browser.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		},
-
-		config = function()
-			local telescope = require("telescope")
-
-			-- telescope.load_extension("file_browser")
-
-			local builtin = require('telescope.builtin')
-			-- vim.keymap.set('n', '<A-0>', ":Telescope file_browser path=%:p:h selected_buffer<CR>", { desc = 'Telescope file browser' })
-		end
+	},
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
 	},
 })
