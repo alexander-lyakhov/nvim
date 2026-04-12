@@ -42,6 +42,7 @@ vim.keymap.set("n", "<leader>vv", ":botright vnew<CR>")
 vim.keymap.set("n", "<F2>", ":w<CR>")
 vim.keymap.set("i", "<F2>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<A-F3>", ":q!<CR>")
+vim.keymap.set("n", "<A-x>", ":q!<CR>")
 
 vim.keymap.set("n", "<A-S-d>", "yy p<CR>")
 
