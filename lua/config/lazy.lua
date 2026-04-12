@@ -85,12 +85,47 @@ require("lazy").setup({
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			"BurntSushi/ripgrep",
-			'nvim-telescope/telescope-file-browser.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 		},
+		config = function()
+			require('telescope').setup({
+				pickers = {
+					builtin = {
+						theme = 'ivy'
+					},
+					colorscheme = {
+						theme = 'ivy'
+					},
+					buffers = {
+						theme = 'ivy'
+					},
+					find_files = {
+						theme = 'ivy'
+					},
+					git_status = {
+						theme = 'ivy'
+					},
+					git_commits = {
+						theme = 'ivy'
+					},
+					git_branches = {
+						theme = 'ivy'
+					},
+				}
+			})
+		end
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
-		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		config = function()
+			require('telescope').setup({
+				extensions = {
+					file_browser = {
+						theme = 'ivy'
+					},
+				}
+			})
+		end
 	},
 })

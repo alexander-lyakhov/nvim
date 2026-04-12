@@ -8,7 +8,6 @@ require("everforest").load()
 require("plugins.lualine")
 require("telescope").load_extension "file_browser"
 
-
 vim.opt.guifont = "JetBrainsMono\\ NFM:h24"
 vim.o.clipboard = 'unnamedplus'
 
@@ -62,7 +61,7 @@ vim.keymap.set("n", "<A-6>", "6gt")
 vim.keymap.set("n", "<A-7>", "7gt")
 vim.keymap.set("n", "<A-8>", "8gt")
 vim.keymap.set("n", "<A-9>", "9gt")
-vim.keymap.set("n", "<A-w>", ":tab split<CR> :tabp<CR> :x<CR> :tabn<CR>")
+vim.keymap.set("n", "<A-w>", "<C-w>T")
 vim.keymap.set("n", "<A-.>", ":+tabmove<CR>")
 vim.keymap.set("n", "<A-,>", ":-tabmove<CR>")
 
@@ -84,12 +83,16 @@ vim.keymap.set("n", "<A-[>", "%")
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>o', builtin.find_files, { desc = 'Telescope find files' })
--- vim.keymap.set('n', '<A-0>', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>ff', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<A-/>', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<A-b>', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 vim.keymap.set('n', '<A-0>', ":Telescope file_browser<CR>", { desc = 'Telescope file browser' })
+vim.keymap.set('n', '<leader>cs', ":Telescope colorscheme<CR>", { desc = 'Telescope colorscheme' })
+vim.keymap.set('n', '<leader>gs', ":Telescope git_status<CR>")
+vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>")
+vim.keymap.set('n', '<A-g>b', ":Telescope git_branches<CR>")
+vim.keymap.set('n', '<A-g>s', ":Telescope git_status<CR>")
 
 
