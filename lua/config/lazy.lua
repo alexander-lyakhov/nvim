@@ -57,7 +57,7 @@ require("lazy").setup({
 	--
 	-- @@@ NeoTree
 	--
-	{
+	--[[{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		dependencies = {
@@ -67,6 +67,7 @@ require("lazy").setup({
 		},
 		lazy = false, -- neo-tree will lazily load itself
 	},
+	--]]
 
 	--
 	-- @@@ TreeSitter
@@ -100,6 +101,9 @@ require("lazy").setup({
 						theme = 'ivy'
 					},
 					find_files = {
+						theme = 'ivy'
+					},
+					live_grep = {
 						theme = 'ivy'
 					},
 					git_status = {

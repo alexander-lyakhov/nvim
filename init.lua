@@ -32,9 +32,12 @@ vim.g.have_nerd_font = true
 
 -- vim.keymap.set("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
+-- vim.g.netrw_liststyle = 3
+vim.g.netrw_browse_split = 3
 
 vim.keymap.set("n", "<leader>r", ":source %<CR>")
-vim.keymap.set("n", "<A-e>", ":Neotree %<CR>")
+-- vim.keymap.set("n", "<A-e>", ":Neotree %<CR>")
+vim.keymap.set("n", "<A-e>", ":vnew<CR> :Ex<CR>")
 vim.keymap.set("n", "<leader>vv", ":botright vnew<CR>")
 vim.keymap.set("n", "<F2>", ":w<CR>")
 vim.keymap.set("i", "<F2>", "<Esc>:w<CR>")
@@ -94,5 +97,6 @@ vim.keymap.set('n', '<leader>gs', ":Telescope git_status<CR>")
 vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>")
 vim.keymap.set('n', '<A-g>b', ":Telescope git_branches<CR>")
 vim.keymap.set('n', '<A-g>s', ":Telescope git_status<CR>")
+vim.keymap.set('n', '<A-g>c', ":Telescope git_commits<CR>")
 
 

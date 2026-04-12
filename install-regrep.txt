@@ -1,0 +1,11 @@
+
+// https://stackoverflow.com/questions/76666894/how-to-install-ripgrep-on-windows
+
+- Install Choco. To do this open PowerShell as admin and run command:
+	Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+- After Choco has bee installed restart PowerShell and run command:
+	choco install ripgrep
+
+- To check if gergep is isntalled run command:
+	rg --version
