@@ -81,19 +81,19 @@ vim.keymap.set("n", "<C-[>", "%")
 vim.keymap.set("n", "<A-]>", "%")
 vim.keymap.set("n", "<A-[>", "%")
 
-
 -- vim.keymap.set("n", "<leader>o", ":Neotree float %<CR>")
 
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>o', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>ff', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<A-/>', builtin.live_grep, { desc = 'Telescope live grep' })
-vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<A-b>', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<A-/>', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<A-*>', "yiw :Telescope live_grep<CR><C-r>+", { desc = 'Telescope live grep' })
+
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
-vim.keymap.set('n', '<A-0>', ":Telescope file_browser<CR>", { desc = 'Telescope file browser' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>cs', ":Telescope colorscheme<CR>", { desc = 'Telescope colorscheme' })
+vim.keymap.set('n', '<A-0>', ":Telescope file_browser<CR>", { desc = 'Telescope file browser' })
+
 vim.keymap.set('n', '<leader>gs', ":Telescope git_status<CR>")
 vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>")
 vim.keymap.set('n', '<A-g>b', ":Telescope git_branches<CR>")
