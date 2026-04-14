@@ -103,9 +103,9 @@ require("lazy").setup({
 					find_files = {
 						theme = 'ivy'
 					},
-					live_grep = {
+					--[[live_grep = {
 						theme = 'ivy'
-					},
+					},--]]
 					git_status = {
 						theme = 'ivy'
 					},

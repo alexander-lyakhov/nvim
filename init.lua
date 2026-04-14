@@ -86,7 +86,8 @@ vim.keymap.set("n", "<A-[>", "%")
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<A-b>', builtin.buffers, { desc = 'Telescope buffers' })
-vim.keymap.set('n', '<A-/>', builtin.live_grep, { desc = 'Telescope live grep' })
+-- vim.keymap.set('n', '<A-/>', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<A-/>', function() builtin.live_grep { search_dirs = { vim.fn.expand("%:p")}} end )
 vim.keymap.set('n', '<A-*>', "yiw :Telescope live_grep<CR><C-r>+", { desc = 'Telescope live grep' })
 
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
