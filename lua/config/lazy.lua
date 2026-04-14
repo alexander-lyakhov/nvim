@@ -86,10 +86,19 @@ require("lazy").setup({
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			"BurntSushi/ripgrep",
-			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+			{
+				'nvim-telescope/telescope-fzf-native.nvim',
+				build = 'make'
+			},
+			{
+				"nvim-telescope/telescope-live-grep-args.nvim" ,
+				version = "^1.0.0",
+			}
 		},
 		config = function()
-			require('telescope').setup({
+			local telescope = require("telescope")
+			
+			telescope.setup({
 				pickers = {
 					builtin = {
 						theme = 'ivy'
@@ -103,9 +112,10 @@ require("lazy").setup({
 					find_files = {
 						theme = 'ivy'
 					},
-					--[[live_grep = {
-						theme = 'ivy'
-					},--]]
+					live_grep = {
+						-- theme = 'ivy'
+						previewer = false
+					},
 					git_status = {
 						theme = 'ivy'
 					},
@@ -115,8 +125,10 @@ require("lazy").setup({
 					git_branches = {
 						theme = 'ivy'
 					},
-				}
+				},
 			})
+
+			telescope.load_extension("live_grep_args")
 		end
 	},
 	{
@@ -126,7 +138,8 @@ require("lazy").setup({
 			require('telescope').setup({
 				extensions = {
 					file_browser = {
-						theme = 'ivy'
+						theme = 'ivy',
+						grouped = true,
 					},
 				}
 			})
