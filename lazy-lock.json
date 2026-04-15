@@ -1,4 +1,5 @@
 {
+  "ayu-vim": { "branch": "master", "commit": "e20d2be153691c12d4cc1880a01a99e44fce7885" },
   "everforest-nvim": { "branch": "main", "commit": "cf08aa67fc96946a01177ae483b7631733b4b5e6" },
   "hop.nvim": { "branch": "master", "commit": "1a1eceafe54b5081eae4cb91c723abd1d450f34b" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },

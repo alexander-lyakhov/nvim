@@ -28,6 +28,9 @@ require("lazy").setup({
 	{
 		'phaazon/hop.nvim'
 	},
+	-- 
+	-- Colorschemes
+	-- https://vimcolorschemes.com/i/trending
 	--
 	-- @@@ Everforest
 	--
@@ -47,6 +50,17 @@ require("lazy").setup({
 			})
 		end
 	},
+
+	{
+		"Luxed/ayu-vim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme ayu")
+			vim.g.ayucolor = "mirage"
+		end,
+	},
+
 	--
 	-- @@@ Lualine
 	--
