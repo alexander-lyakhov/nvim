@@ -42,11 +42,17 @@ require("lazy").setup({
 
 		config = function()
 			require("everforest").setup({
+				vim.cmd.colorscheme('everforest'),
 				italics = false,
 				background = "hard",
 				transparent_background_level = 0,
-				vim.cmd.colorscheme('everforest'),
 				ui_contrast = "high",
+
+				colours_override = function (palette)
+					-- palette.bg4 = palette.fg
+					-- palette.bg4 = palette.statusline2
+					palette.bg4 = palette.grey0
+				end,
 			})
 		end
 	},
