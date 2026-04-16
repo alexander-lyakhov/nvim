@@ -44,7 +44,15 @@ vim.keymap.set("n", "<A-F3>", ":q!<CR>")
 vim.keymap.set("n", "<A-x>", ":q!<CR>")
 vim.keymap.set("n", "<A-r>", ":e!<CR>")
 
-vim.keymap.set("n", "<A-S-d>", "yy p<CR>")
+vim.keymap.set("n", "<A-S-d>", "yy p")
+vim.keymap.set("v", "<A-S-d>", "y P")
+vim.keymap.set("v", "<C-A-Right>", ">gv")
+vim.keymap.set("v", "<C-A-Left>", "<gv")
+vim.keymap.set("n", "<C-A-Right>", "<S-v>>gv")
+vim.keymap.set("n", "<C-A-Left>", "<S-v><gv")
+vim.keymap.set("v", "<Tab>", ">gv")
+vim.keymap.set("v", "<A-p>", ">gv")
+vim.keymap.set("v", "<A-o>", "<gv")
 
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
@@ -68,6 +76,9 @@ vim.keymap.set("n", "<A-9>", "9gt")
 vim.keymap.set("n", "<A-w>", "<C-w>T")
 vim.keymap.set("n", "<A-.>", ":+tabmove<CR>")
 vim.keymap.set("n", "<A-,>", ":-tabmove<CR>")
+
+-- @@@ Marks
+vim.keymap.set("n", "<C-1>", "`1")
 
 -- @@@ Split view navigation
 vim.keymap.set("n", "<A-Right>", "<C-w><Right>")

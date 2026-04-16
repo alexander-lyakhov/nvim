@@ -50,8 +50,9 @@ require("lazy").setup({
 
 				colours_override = function (palette)
 					-- palette.bg4 = palette.fg
-					-- palette.bg4 = palette.statusline2
-					palette.bg4 = palette.grey0
+					palette.bg4 = palette.statusline1
+					-- palette.bg4 = palette.grey0
+
 				end,
 			})
 		end
@@ -133,7 +134,7 @@ require("lazy").setup({
 						theme = 'ivy'
 					},
 					live_grep = {
-						-- theme = 'ivy'
+						theme = 'dropdown',
 						previewer = false
 					},
 					git_status = {
