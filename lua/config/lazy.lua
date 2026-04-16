@@ -127,6 +127,9 @@ require("lazy").setup({
 					colorscheme = {
 						theme = 'ivy'
 					},
+					registers = {
+						theme = 'ivy'
+					},
 					buffers = {
 						theme = 'ivy'
 					},
@@ -134,7 +137,8 @@ require("lazy").setup({
 						theme = 'ivy'
 					},
 					live_grep = {
-						theme = 'dropdown',
+						-- theme = 'dropdown',
+						theme = 'ivy',
 						previewer = false
 					},
 					git_status = {
