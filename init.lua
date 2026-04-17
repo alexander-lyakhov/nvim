@@ -11,6 +11,7 @@ require("telescope").load_extension "file_browser"
 vim.opt.guifont = "JetBrainsMono\\ NFM:h24"
 vim.o.clipboard = 'unnamedplus'
 
+vim.opt.nu = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
@@ -29,7 +30,6 @@ vim.opt.termguicolors = true
 
 vim.g.have_nerd_font = true
 
-
 vim.g.mapleader = " "
 -- vim.g.netrw_liststyle = 3
 vim.g.netrw_browse_split = 3
@@ -42,7 +42,10 @@ vim.keymap.set("n", "<F2>", ":w<CR>")
 vim.keymap.set("i", "<F2>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<A-F3>", ":q!<CR>")
 vim.keymap.set("n", "<A-x>", ":q!<CR>")
-vim.keymap.set("n", "<A-r>", ":e!<CR>")
+vim.keymap.set("n", "<A-r>", ":e!<CR>") -- force reload file
+vim.keymap.set("n", "<A-c>", "mmyiw`m") -- copy word under cursor
+vim.keymap.set("n", "<A-y>", "mm^v$hy`m`<Esc>") -- copy current line without CR
+vim.keymap.set("n", "<A-v>", "diw\"0Pb") -- replace word under cursor with text from clipboard
 
 vim.keymap.set("n", "<A-S-d>", "yy p")
 vim.keymap.set("v", "<A-S-d>", "y P")
@@ -119,4 +122,12 @@ vim.keymap.set('n', '<A-g>b', ":Telescope git_branches<CR>")
 vim.keymap.set('n', '<A-g>s', ":Telescope git_status<CR>")
 vim.keymap.set('n', '<A-g>c', ":Telescope git_commits<CR>")
 
+-- @@@ Commands
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
