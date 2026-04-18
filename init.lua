@@ -42,10 +42,12 @@ vim.keymap.set("n", "<F2>", ":w<CR>")
 vim.keymap.set("i", "<F2>", "<Esc>:w<CR>")
 vim.keymap.set("n", "<A-F3>", ":q!<CR>")
 vim.keymap.set("n", "<A-x>", ":q!<CR>")
-vim.keymap.set("n", "<A-r>", ":e!<CR>") -- force reload file
-vim.keymap.set("n", "<A-c>", "mmyiw`m") -- copy word under cursor
-vim.keymap.set("n", "<A-y>", "mm^v$hy`m`<Esc>") -- copy current line without CR
-vim.keymap.set("n", "<A-v>", "diw\"0Pb") -- replace word under cursor with text from clipboard
+vim.keymap.set("n", "<A-r>", ":e!<CR>")               -- force reload file
+vim.keymap.set("n", "<A-c>", "mmyiw`m")               -- copy word under cursor
+vim.keymap.set("i", "<A-c>", "<Esc>mmyiw`ma")         -- copy word under cursor
+vim.keymap.set("n", "<A-y>", "mm^v$hy`m`<Esc>")       -- copy current line without CR
+vim.keymap.set("n", "<A-v>", "diw\"0Pb")              -- replace word under cursor with text from clipboard
+vim.keymap.set("i", "<A-v>", "<Esc>diw\"0Pb")         -- replace word under cursor with text from clipboard
 
 vim.keymap.set("n", "<A-S-d>", "yy p")
 vim.keymap.set("v", "<A-S-d>", "y P")
