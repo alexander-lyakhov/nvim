@@ -1,5 +1,8 @@
 local cmp = require'cmp'
 
+vim.api.nvim_set_hl(0, "MyMenu",    {fg = '#808080'})
+vim.api.nvim_set_hl(0, "MyMenuSel", {bg = '#008080', fg = '#ffffff'})
+
 cmp.setup({
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
@@ -18,7 +21,10 @@ cmp.setup({
 		end,
 	},
 	window = {
-		completion = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered({
+			border = "single",
+			winhighlight = "Normal:MyMenu,FloatBorder:MyMenu,CursorLine:MyMenuSel,Search:None"
+		}),
 		documentation = cmp.config.window.bordered(),
 	},
 	mapping = cmp.mapping.preset.insert({
