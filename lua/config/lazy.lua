@@ -96,7 +96,18 @@ require("lazy").setup({
 	{
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
-		build = ':TSUpdate'
+		build = ':TSUpdate',
+		config = function()
+			require('nvim-treesitter').setup {
+				ensure_installed = { "typescript", "lua", "javascript", "rust" },
+
+				sync_install = false,
+				auto_install = true,
+				highlight = {
+					enable = true,
+				}
+			}
+		end
 	},
 	--
 	-- @@@ Telescope
@@ -170,4 +181,34 @@ require("lazy").setup({
 			})
 		end
 	},
+
+	--
+	-- @@@ LSP
+	--
+	{
+		"neovim/nvim-lspconfig",
+	},
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	{
+		"hrsh7th/cmp-buffer",
+	},
+	{
+		"hrsh7th/cmp-path",
+	},
+	{
+		"hrsh7th/cmp-cmdline",
+	},
+	{
+		"hrsh7th/nvim-cmp",
+	},
+
+	--
+	-- @@@ άτϋως
+	--
+	{
+		"mason-org/mason.nvim",
+		opts = {}
+	}
 })

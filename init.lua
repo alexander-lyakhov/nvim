@@ -3,14 +3,17 @@ require("config.lazy")
 require("config.keymaps")
 
 -- require("plugins.neotree")
--- require("plugins.treesitter")
 require("everforest").load()
 require("plugins.lualine")
-require("telescope").load_extension "file_browser"
+require("plugins.cmp")
+-- require("plugins.treesitter")
+-- require("telescope").load_extension "file_browser"
 
-vim.opt.guifont = "JetBrainsMono\\ NFM:h24"
 vim.o.clipboard = 'unnamedplus'
 
+vim.lsp.enable('pyright')
+
+vim.opt.guifont = "JetBrainsMono\\ NFM:h24"
 vim.opt.nu = true
 vim.opt.number = true
 vim.opt.relativenumber = true
