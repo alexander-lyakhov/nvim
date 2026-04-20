@@ -97,17 +97,6 @@ require("lazy").setup({
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
 		build = ':TSUpdate',
-		config = function()
-			require('nvim-treesitter').setup {
-				ensure_installed = { "typescript", "lua", "javascript", "rust" },
-
-				sync_install = false,
-				auto_install = true,
-				highlight = {
-					enable = true,
-				}
-			}
-		end
 	},
 	--
 	-- @@@ Telescope
@@ -205,7 +194,7 @@ require("lazy").setup({
 	},
 
 	--
-	-- @@@ άτϋως
+	-- @@@ Mason
 	--
 	{
 		"mason-org/mason.nvim",
