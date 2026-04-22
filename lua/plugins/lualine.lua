@@ -4,4 +4,9 @@ require('lualine').setup({
 	options = { theme = 'onedark' },
 	-- options = { theme = 'powerline' },
 	-- options = { theme = 'tomorrow_night' },
+	sections = {
+		lualine_c = {
+			{ 'filename', path = 1 },
+		}
+	}
 })
