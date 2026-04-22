@@ -30,6 +30,9 @@ vim.keymap.set("v", "<Tab>", ">gv", opts)
 vim.keymap.set("v", "<A-p>", ">gv", opts)
 vim.keymap.set("v", "<A-o>", "<gv", opts)
 
+vim.keymap.set("n", "<S-Plus>",  ":%s/^  /\t/g")
+vim.keymap.set("n", "<S-Minus>", ":%s/^\t/  /g")
+
 vim.keymap.set("n", "<Esc>", ":noh<CR>")
 
 -- @@@ Scroll viewport

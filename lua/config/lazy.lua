@@ -75,6 +75,7 @@ require("lazy").setup({
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
 	},
+
 	--
 	-- @@@ NeoTree
 	--
@@ -174,6 +175,7 @@ require("lazy").setup({
 	--
 	-- @@@ LSP
 	--
+	
 	{
 		"neovim/nvim-lspconfig",
 	},
@@ -191,6 +193,45 @@ require("lazy").setup({
 	},
 	{
 		"hrsh7th/nvim-cmp",
+	},
+	
+	--[[
+	{
+		'saghen/blink.cmp',
+		dependencies = {'rafamadriz/friendly-snippets'},
+		version = '1.*',
+		opts = {
+			source = {
+				default = {'lsp', 'path', 'snippets', 'buffer'},
+			},
+			keymap = { preset = 'enter' },
+			completion = {
+				menu = {
+					draw = {
+						columns = { { 'item_idx' }, { 'label', 'label_description', gap = 1 } },
+						components = {
+							item_idx = {
+								text = function(ctx) return ctx.idx == 10 and '0' or ctx.idx >= 10 and ' ' or tostring(ctx.idx) end,
+								highlight = 'BlinkCmpItemIdx' -- optional, only if you want to change its color
+							}
+						}
+					}
+				},
+				documentation = { auto_show = true}
+			},
+		},
+	},
+	--]]
+
+	{
+		"vxpm/ferris.nvim",
+		opts = {},
+		config = function()
+			local expand_macro = require("ferris.methods.expand_macro")
+			local view_memory_layout = require("ferris.methods.view_memory_layout")
+			vim.keymap.set("n", "<leader>em", expand_macro)
+			vim.keymap.set("n", "<leader>me", view_memory_layout)
+		end
 	},
 
 	--

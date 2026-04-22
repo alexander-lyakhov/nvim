@@ -9,6 +9,7 @@ require("everforest").load()
 require("plugins.lualine")
 require("plugins.cmp")
 require("plugins.treesitter")
+require("plugins.lsp")
 
 -- @@@ Telescope keymaps
 local builtin = require('telescope.builtin')
