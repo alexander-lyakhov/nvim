@@ -18,6 +18,9 @@ vim.opt.ignorecase = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.termguicolors = true
+vim.opt.swapfile = false
+vim.opt.showtabline = 2                -- default 1
+vim.opt.numberwidth = 4                -- 
 
 vim.g.have_nerd_font = true
 vim.g.mapleader = " "

@@ -1,3 +1,6 @@
+require("core.options")
+require("core.keymaps")
+
 -- bootstrap lazy.nvim, LazyVim and your plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -25,13 +28,12 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("core.options")
-require("core.keymaps")
 require("config.lazy")
 require("config.keymaps")
 
 -- require("plugins.neotree")
 require("everforest").load()
+-- require("nord").load()
 require("plugins.lualine")
 -- require("plugins.cmp")
 require("plugins.treesitter")
