@@ -177,32 +177,33 @@ require("lazy").setup({
 	--
 	
 	{
-		"neovim/nvim-lspconfig",
-	},
-	{
-		"hrsh7th/cmp-nvim-lsp",
-	},
-	{
 		"hrsh7th/cmp-buffer",
 	},
 	{
 		"hrsh7th/cmp-path",
 	},
 	{
-		"hrsh7th/cmp-cmdline",
+		"neovim/nvim-lspconfig",
 	},
+	
 	{
 		"hrsh7th/nvim-cmp",
 	},
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	{
+		"hrsh7th/cmp-cmdline",
+	},
 	
-	--[[
+	
 	{
 		'saghen/blink.cmp',
 		dependencies = {'rafamadriz/friendly-snippets'},
 		version = '1.*',
 		opts = {
 			source = {
-				default = {'lsp', 'path', 'snippets', 'buffer'},
+				default = {'lsp', 'path', 'snippets', 'buffer', 'cmdline'},
 			},
 			keymap = { preset = 'enter' },
 			completion = {
@@ -221,7 +222,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	--]]
+	
 
 	{
 		"vxpm/ferris.nvim",

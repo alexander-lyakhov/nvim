@@ -7,7 +7,7 @@ require("config.keymaps")
 -- require("plugins.neotree")
 require("everforest").load()
 require("plugins.lualine")
-require("plugins.cmp")
+-- require("plugins.cmp")
 require("plugins.treesitter")
 require("plugins.lsp")
 
@@ -29,6 +29,7 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find f
 vim.keymap.set('n', '<leader>tc', ":Telescope colorscheme<CR>", { desc = 'Telescope colorscheme' })
 vim.keymap.set('n', '<leader>tr', ":Telescope registers<CR>", { desc = 'Telescope registers' })
 vim.keymap.set("n", "<A-0>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+vim.keymap.set("n", "<A-\\>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
 -- vim.keymap.set('n', '<A-0>', ":Telescope file_browser<CR>", { desc = 'Telescope file browser' })
 
 -- @@@ Telescope Git keymaps
