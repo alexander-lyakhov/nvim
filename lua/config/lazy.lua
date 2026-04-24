@@ -8,7 +8,7 @@ require("lazy").setup({
 	--
 	-- @@@ Everforest
 	--
-	
+			
 	{
 		"neanias/everforest-nvim",
 		version = false,
@@ -33,7 +33,6 @@ require("lazy").setup({
 			require("everforest").load()
 		end
 	},
-	
 	--[[
 	{
 		"shaunsingh/nord.nvim",

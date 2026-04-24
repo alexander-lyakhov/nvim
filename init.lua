@@ -32,7 +32,7 @@ require("config.lazy")
 require("config.keymaps")
 
 -- require("plugins.neotree")
-require("everforest").load()
+-- require("everforest").load()
 -- require("nord").load()
 require("plugins.lualine")
 -- require("plugins.cmp")

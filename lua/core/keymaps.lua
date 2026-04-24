@@ -20,8 +20,11 @@ vim.keymap.set("i", "<A-v>", "<Esc>diw\"0Pb", opts)                     -- repla
 vim.keymap.set("n", "<A-d>", "diw", opts)                               -- delete a word under cursor
 vim.keymap.set("i", "<C-\\>", "<Esc>", opts)                            -- Return from insert mode
 
+-- @@@ Duplicate line
 vim.keymap.set("n", "<A-S-d>", "yy p", opts)
 vim.keymap.set("v", "<A-S-d>", "y P", opts)
+
+-- @@@ Shift selected code to the right / left
 vim.keymap.set("v", "<C-A-Right>", ">gv", opts)
 vim.keymap.set("v", "<C-A-Left>", "<gv", opts)
 vim.keymap.set("n", "<C-A-Right>", "<S-v>>gv", opts)
@@ -33,6 +36,11 @@ vim.keymap.set("v", "<A-o>", "<gv", opts)
 vim.keymap.set("n", "<S-Plus>",  ":%s/^  /\t/g", opts)
 vim.keymap.set("n", "<S-Minus>", ":%s/^\t/  /g", opts)
 
+vim.keymap.set("n", "x", '"_x', opts)
+vim.keymap.set("v", "p", '"_dP', opts)
+
+vim.keymap.set("n", "n", "nzz", opts)
+vim.keymap.set("n", "N", "Nzz", opts)
 vim.keymap.set("n", "<Esc>", ":noh<CR>", opts)
 
 -- @@@ Scroll viewport
@@ -40,6 +48,8 @@ vim.keymap.set("n", "<A-j>", "<C-e>", opts)
 vim.keymap.set("n", "<A-k>", "<C-y>", opts)
 vim.keymap.set("n", "<C-Down>", "<C-e>", opts)
 vim.keymap.set("n", "<C-Up>", "<C-y>", opts)
+-- vim.keymap.set("n", "<S-A-Up>", "<C-y>", opts)
+-- vim.keymap.set("n", "<S-A-Down>", "<C-e>", opts)
 
 -- @@@ Tabs
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", opts)
