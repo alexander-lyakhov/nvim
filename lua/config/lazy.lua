@@ -30,7 +30,18 @@ require("lazy").setup({
 
 				end,
 			})
-			require("everforest").load()
+			-- require("everforest").load()
+		end
+	},
+
+	-- Using Lazy
+	{
+		"navarasu/onedark.nvim",
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			require('onedark').setup {
+				style = 'warm'
+			}
 		end
 	},
 	--[[

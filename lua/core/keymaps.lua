@@ -48,8 +48,8 @@ vim.keymap.set("n", "<A-j>", "<C-e>", opts)
 vim.keymap.set("n", "<A-k>", "<C-y>", opts)
 vim.keymap.set("n", "<C-Down>", "<C-e>", opts)
 vim.keymap.set("n", "<C-Up>", "<C-y>", opts)
--- vim.keymap.set("n", "<S-A-Up>", "<C-y>", opts)
--- vim.keymap.set("n", "<S-A-Down>", "<C-e>", opts)
+vim.keymap.set("n", "<C-\\>", "<C-e>", opts)
+vim.keymap.set("n", "<C-]>", "<C-y>", opts)
 
 -- @@@ Tabs
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", opts)
@@ -81,8 +81,6 @@ vim.keymap.set("n", "<C--S-Left>", ":vertical resize +1<CR>", opts)
 vim.keymap.set("n", "<C-S-Right>", ":vertical resize -1<CR>", opts)
 
 -- @@@ Jump between breckets
-vim.keymap.set("n", "<C-]>", "%", opts)
-vim.keymap.set("n", "<C-[>", "%", opts)
 vim.keymap.set("n", "<A-]>", "%", opts)
 vim.keymap.set("n", "<A-[>", "%", opts)
 

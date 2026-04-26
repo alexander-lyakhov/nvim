@@ -33,6 +33,7 @@ require("config.keymaps")
 
 -- require("plugins.neotree")
 -- require("everforest").load()
+require('onedark').load()
 -- require("nord").load()
 require("plugins.lualine")
 -- require("plugins.cmp")
