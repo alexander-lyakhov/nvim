@@ -1,5 +1,5 @@
 return {
-    -- @@@ everforest
+	-- @@@ everforest
 	everforest = {
 		"neanias/everforest-nvim",
 		version = false,

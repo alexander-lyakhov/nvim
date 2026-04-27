@@ -2,7 +2,7 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>r", ":source %<CR>", opts)
 -- vim.keymap.set("n", "<A-e>", ":Neotree %<CR>", opts)
-vim.keymap.set("n", "<A-e>", ":vnew<CR> :Ex<CR>", opts)
+-- vim.keymap.set("n", "<A-e>", ":vnew<CR> :Ex<CR>", opts)
 vim.keymap.set("n", "<leader>vv", ":botright vnew<CR>", opts)
 vim.keymap.set("n", "<F2>", ":w<CR>", opts)
 vim.keymap.set("i", "<F2>", "<Esc>:w<CR>", opts)
