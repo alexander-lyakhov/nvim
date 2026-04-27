@@ -31,14 +31,17 @@ vim.opt.rtp:prepend(lazypath)
 require("config.lazy")
 require("config.keymaps")
 
--- require("plugins.neotree")
+
 -- require("everforest").load()
-require('onedark').load()
+-- require('onedark').load()
 -- require("nord").load()
+
+-- require("plugins.colorscheme")
 require("plugins.lualine")
 -- require("plugins.cmp")
 require("plugins.treesitter")
 require("plugins.lsp")
+
 
 -- @@@ Telescope keymaps
 local builtin = require('telescope.builtin')
