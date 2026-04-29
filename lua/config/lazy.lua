@@ -78,6 +78,9 @@ require("lazy").setup({
 						theme = 'ivy',
 						previewer = false,
 					},
+					grep_string = {
+						theme = 'ivy',
+					},
 					git_status = {
 						theme = 'ivy'
 					},
@@ -91,6 +94,7 @@ require("lazy").setup({
 			})
 
 			local builtin = require('telescope.builtin')
+			local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 
 			vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp tags' })
 			vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
@@ -103,6 +107,16 @@ require("lazy").setup({
 			vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 			vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = '[S]earch [C]olorschemes' })
 			vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[S]earch [B]uffers' })
+
+			vim.keymap.set("n", "<A-*>", function() builtin.grep_string { search_dirs = { vim.fn.expand("%:p")}} end)
+			vim.keymap.set('n', '<A-/>', function() builtin.live_grep { search_dirs = { vim.fn.expand("%:p")}} end )
+			vim.keymap.set('n', '<A-b>', builtin.buffers, { desc = 'Telescope buffers' })
+			vim.keymap.set("n", "<F7>", builtin.live_grep)
+			vim.keymap.set("n", "<A-\\>", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
+
+			vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+			vim.keymap.set('n', '<leader>tc', ":Telescope colorscheme<CR>", { desc = 'Telescope colorscheme' })
+			vim.keymap.set('n', '<leader>tr', ":Telescope registers<CR>", { desc = 'Telescope registers' })
 
 			telescope.load_extension("live_grep_args")
 		end
