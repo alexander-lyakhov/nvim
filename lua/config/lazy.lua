@@ -10,28 +10,25 @@ require("lazy").setup({
 	--
 	require("plugins.colorscheme").everforest,
 	-- require("plugins.colorscheme").onedark,
-	-- require("plugins.colorscheme").ayu,
 	-- require("plugins.colorscheme").nord,
+	-- require("plugins.colorscheme").ayu,
 
 	require("plugins.neotree"),
 	require("plugins.bufferline"),
+	require("plugins.lualine"),
+	require("plugins.treesitter"),
 
-	--
-	-- @@@ Lualine
-	--
-	{
-		'nvim-lualine/lualine.nvim',
-		dependencies = { 'nvim-tree/nvim-web-devicons' },
-	},
-
+	--]]
 	--
 	-- @@@ TreeSitter
 	--
+	--[[
 	{
 		'nvim-treesitter/nvim-treesitter',
 		lazy = false,
 		build = ':TSUpdate',
 	},
+	--]]
 	--
 	-- @@@ Telescope
 	--
@@ -61,6 +58,10 @@ require("lazy").setup({
 					colorscheme = {
 						theme = 'ivy'
 					},
+					diagnostics = {
+						theme = 'ivy'
+						-- theme = 'dropdown'
+					},
 					registers = {
 						theme = 'ivy'
 					},
@@ -68,12 +69,14 @@ require("lazy").setup({
 						theme = 'ivy'
 					},
 					find_files = {
-						theme = 'ivy'
+						file_ignore_patterns = {'node_modules', '.git'},
+						theme = 'ivy',
 					},
 					live_grep = {
 						-- theme = 'dropdown',
+						file_ignore_patterns = {'node_modules', '.git'},
 						theme = 'ivy',
-						previewer = false
+						previewer = false,
 					},
 					git_status = {
 						theme = 'ivy'
@@ -86,6 +89,20 @@ require("lazy").setup({
 					},
 				},
 			})
+
+			local builtin = require('telescope.builtin')
+
+			vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp tags' })
+			vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
+			vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+			vim.keymap.set('n', '<leader>sb', builtin.builtin, { desc = '[S]earch [S]elect' })
+			vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+			vim.keymap.set('n', '<leader>ss', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+			vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+			vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+			vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
+			vim.keymap.set('n', '<leader>sc', builtin.colorscheme, { desc = '[S]earch [C]olorschemes' })
+			vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[S]earch [B]uffers' })
 
 			telescope.load_extension("live_grep_args")
 		end
