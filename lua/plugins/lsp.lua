@@ -21,6 +21,7 @@ vim.lsp.enable("rust")
 vim.lsp.enable("ts")
 --]]
 
+
 -- @@@ Diagnostics
 vim.keymap.set("n", "H", vim.lsp.buf.hover)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -37,6 +38,7 @@ vim.diagnostic.config({
 	virtual_text = true,
 	virtual_lines = false,
 	update_in_insert = true,
+	
 	float = {
 		-- UI.
 		header = false,

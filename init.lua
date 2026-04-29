@@ -32,10 +32,3 @@ vim.opt.rtp:prepend(lazypath)
 require("config.lazy")
 require("config.keymaps")
 require("plugins.lsp")
-
--- @@@ Telescope Git keymaps
-vim.keymap.set('n', '<leader>gs', ":Telescope git_status<CR>")
-vim.keymap.set('n', '<leader>gb', ":Telescope git_branches<CR>")
-vim.keymap.set('n', '<A-g>b', ":Telescope git_branches<CR>")
-vim.keymap.set('n', '<A-g>s', ":Telescope git_status<CR>")
-vim.keymap.set('n', '<A-g>c', ":Telescope git_commits<CR>")
