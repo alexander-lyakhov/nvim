@@ -4,6 +4,21 @@ vim.lsp.config["clangd"] = {
 	root_markers = { ".git" }
 }
 vim.lsp.enable("clangd")
+
+vim.lsp.config["html"] = {
+	cmd = {"vscode-html-language-server"},
+	filetype = {"htm", "html", "vue"},
+	root_markers = { ".git" }
+}
+vim.lsp.enable("vue")
+
+vim.lsp.config["vue"] = {
+	cmd = {"vue-language-server"},
+	filetype = { "vue"},
+	root_markers = { ".git" }
+}
+vim.lsp.enable("vue")
+
 --[[
 vim.lsp.config["rust"] = {
 	cmd = {"rust-analyzer"},
@@ -25,7 +40,7 @@ vim.lsp.enable("ts")
 -- @@@ Diagnostics
 vim.keymap.set("n", "H", vim.lsp.buf.hover)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>da", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>dd", vim.diagnostic.open_float)
 vim.keymap.set("n", "<leader>dl", vim.diagnostic.setloclist)
 

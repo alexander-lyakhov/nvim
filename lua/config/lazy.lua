@@ -20,6 +20,8 @@ require("lazy").setup({
 	require("plugins.autopairs"),
 	require("plugins.gitsigns"),
 	require("plugins.comments"),
+	require("plugins.aerial"),
+	-- require("plugins.mason"),
 
 	--]]
 	--
