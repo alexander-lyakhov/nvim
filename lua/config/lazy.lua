@@ -1,7 +1,4 @@
 require("lazy").setup({
-	{
-		'phaazon/hop.nvim'
-	},
 	-- 
 	-- Colorschemes
 	-- https://vimcolorschemes.com/i/trending
@@ -21,6 +18,9 @@ require("lazy").setup({
 	require("plugins.gitsigns"),
 	require("plugins.comments"),
 	require("plugins.aerial"),
+	require("plugins.lsp"),
+	require("plugins.blink"),
+	-- require("plugins.cmp"),
 	-- require("plugins.mason"),
 
 	--]]
@@ -56,31 +56,35 @@ require("lazy").setup({
 	--
 	-- @@@ LSP
 	--
-	
+
+	--[[
 	{
 		"hrsh7th/cmp-buffer",
 	},
 	{
 		"hrsh7th/cmp-path",
-	},
+	},	
 	{
-		"neovim/nvim-lspconfig",
-	},
-	
-	{
-		"hrsh7th/nvim-cmp",
+		"hrsh7th/cmp-cmdline",
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
-		"hrsh7th/cmp-cmdline",
+		"hrsh7th/nvim-cmp",
 	},
+	--]]
 	
-	
+	--
+	-- @@@ Blink
+	--
+	--[[	
 	{
 		'saghen/blink.cmp',
-		dependencies = {'rafamadriz/friendly-snippets'},
+		dependencies = {
+			'rafamadriz/friendly-snippets',
+			'hrsh7th/nvim-cmp',
+		},
 		version = '1.*',
 		opts = {
 			source = {
@@ -103,7 +107,7 @@ require("lazy").setup({
 			},
 		},
 	},
-	
+	--]]
 
 	{
 		"vxpm/ferris.nvim",
@@ -126,5 +130,25 @@ require("lazy").setup({
 
 	{
 		"nvim-mini/mini.icons"
-	}
+	},
+
+	{
+		-- Hints keybinds
+		'folke/which-key.nvim',
+		opts = {
+			delay = 1000,
+			win = {
+				border = {
+					{ '┌', 'FloatBorder' },
+					{ '─', 'FloatBorder' },
+					{ '┐', 'FloatBorder' },
+					{ '│', 'FloatBorder' },
+					{ '┘', 'FloatBorder' },
+					{ '─', 'FloatBorder' },
+					{ '└', 'FloatBorder' },
+					{ '│', 'FloatBorder' },
+				},
+			},
+		},
+	},
 })
