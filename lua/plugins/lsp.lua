@@ -72,6 +72,9 @@ return {
 				-- or a suggestion from your LSP for this to activate.
 				map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
+				-- Code format
+				map('<leader>fm', vim.lsp.buf.format, '[G]oto [D]eclaration')
+
 				-- Opens a popup that displays documentation about the word under your cursor
 				--  See `:help K` for why this keymap
 				map('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -80,8 +83,9 @@ return {
 				--  For example, in C this would take you to the header
 				map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-				map('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-				map('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
+
+				-- map('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
+				-- map('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
 				map('<leader>wl', function()
 					print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 				end, '[W]orkspace [L]ist Folders')

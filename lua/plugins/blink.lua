@@ -9,9 +9,17 @@ return {
 		source = {
 			default = {'lsp', 'path', 'snippets', 'buffer', 'cmdline'},
 		},
-		keymap = { preset = 'enter' },
+		keymap = {
+			preset = 'enter',
+			-- preset = 'default',
+
+			-- ['<C-p>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
+			-- ['<A-p>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
+		},
+
 		completion = {
 			menu = {
+			    --[[
 				draw = {
 					columns = { { 'item_idx' }, { 'label', 'label_description', gap = 1 } },
 					components = {
@@ -20,8 +28,17 @@ return {
 							highlight = 'BlinkCmpItemIdx' -- optional, only if you want to change its color
 						}
 					}
+				},
+				--]]
+			},
+
+			list = {
+				selection = {
+					preselect = false,
+					auto_insert = false,
 				}
 			},
+
 			documentation = { auto_show = true}
 		},
 	},
