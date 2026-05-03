@@ -1,3 +1,7 @@
+vim.api.nvim_set_hl(0, "HLMenu",    {})
+vim.api.nvim_set_hl(0, "HLCursor",  { fg = '#ffffff', bg = '#008080' })
+vim.api.nvim_set_hl(0, "HLDocs",  {})
+
 return {
 	'saghen/blink.cmp',
 	dependencies = {
@@ -19,27 +23,41 @@ return {
 
 		completion = {
 			menu = {
-			    --[[
+				border = 'single',
+				winhighlight = 'Normal:HLMenu,FloatBorder:Conceal,CursorLine:BlinkCmpMenuSelection,Search:None',
+
 				draw = {
-					columns = { { 'item_idx' }, { 'label', 'label_description', gap = 1 } },
+					padding = 1,
+
+					--[[columns = { { 'item_idx' }, { 'label', 'label_description', gap = 1 } },
 					components = {
 						item_idx = {
 							text = function(ctx) return ctx.idx == 10 and '0' or ctx.idx >= 10 and ' ' or tostring(ctx.idx) end,
 							highlight = 'BlinkCmpItemIdx' -- optional, only if you want to change its color
 						}
-					}
+					}--]]
 				},
-				--]]
+				
+			},
+
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 0,
+				window = {
+					border = 'single',
+					padding = 1,
+					-- winhighlight = 'Normal:HLDocs,FloatBorder:CursorLineFold,EndOfBuffer:WinSeparator,NormalFloat:NonText',
+					winhighlight = 'Normal:HLDocs,FloatBorder:CursorLineFold,EndOfBuffer:WinSeparator,NormalFloat:CursorLineNr',
+				}
 			},
 
 			list = {
 				selection = {
-					preselect = false,
+					preselect = true,
 					auto_insert = false,
 				}
 			},
 
-			documentation = { auto_show = true}
 		},
 	},
 }

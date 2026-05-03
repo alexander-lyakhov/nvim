@@ -23,7 +23,7 @@ return {
 						theme = 'ivy'
 					},
 					colorscheme = {
-						theme = 'ivy'
+						theme = 'ivy',
 					},
 					diagnostics = {
 						theme = 'ivy'
