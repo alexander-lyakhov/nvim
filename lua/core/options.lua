@@ -20,7 +20,7 @@ vim.opt.splitbelow = true
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
 vim.opt.showtabline = 2                -- default 1
-vim.opt.numberwidth = 4                -- 
+vim.opt.numberwidth = 4                --
 
 vim.g.have_nerd_font = true
 vim.g.mapleader = " "
@@ -28,3 +28,5 @@ vim.g.mapleader = " "
 -- vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 3
+
+-- vim.o.winborder = "single"
