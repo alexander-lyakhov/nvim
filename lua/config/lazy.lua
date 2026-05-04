@@ -6,8 +6,8 @@ require("lazy").setup({
 	-- @@@ Everforest
 	--
 	require("plugins.colorscheme").everforest,
-	-- require("plugins.colorscheme").onedark,
-	-- require("plugins.colorscheme").nord,
+	require("plugins.colorscheme").onedark,
+	require("plugins.colorscheme").nord,
 
 	require("plugins.neotree"),
 	require("plugins.bufferline"),

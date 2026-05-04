@@ -176,7 +176,8 @@ return {
 			html = { filetypes = { 'html', 'twig', 'hbs', 'vue' } },
 			-- wc_ls = { filetypes = { 'html', 'vue', 'js', 'ts' } },
 			cssls = {},
-			vls = {},
+			vue_ls = {},
+			-- vetur_vls = {},
 			rust_analyzer = {},
 			-- typescript_language-server = {},
 		}

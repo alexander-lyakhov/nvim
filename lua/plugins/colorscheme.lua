@@ -67,4 +67,11 @@ return {
 			require('nord').set()
 		end
 	},
+
+    olive = {
+    	"vimcolorschemes/olive-crt.nvim",
+    	lazy = false,
+    	priority = 1000,
+    	opts = {},
+    }
 }

@@ -1,0 +1,13 @@
+
+Исправляем кривую подсветку парных скобок:
+
+- Открываем файл
+	nvim-data\lazy\everforest-nvim\lua\everforest\highlights.lua
+
+- Находим строчку:
+
+	MatchParen = syntax_entry(palette.none, palette.bg4),
+
+		и заменяем ее на:
+
+	MatchParenCur = syntax_entry(palette.none, palette.none, { styles.bold }),

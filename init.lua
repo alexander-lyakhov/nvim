@@ -33,3 +33,4 @@ require("config.lazy")
 require("config.keymaps")
 -- require("plugins.lsp")
 
+vim.cmd.colorscheme("everforest")
