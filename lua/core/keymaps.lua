@@ -1,6 +1,7 @@
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<leader>r", ":source %<CR>", opts)
+-- vim.keymap.set("n", "<leader>r", ":source %<CR>", opts)
+vim.keymap.set("n", "<leader>r", ":source c:\\Users\\Alex\\AppData\\Local\\nvim\\init.lua <CR>", opts)
 -- vim.keymap.set("n", "<A-e>", ":Neotree %<CR>", opts)
 -- vim.keymap.set("n", "<A-e>", ":vnew<CR> :Ex<CR>", opts)
 vim.keymap.set("n", "<leader>vv", ":botright vnew<CR>", opts)
@@ -33,8 +34,10 @@ vim.keymap.set("n", "<C-A-Left>", "<S-v><gv", opts)
 vim.keymap.set("v", "<Tab>", ">gv", opts)
 vim.keymap.set("v", "<A-p>", ">gv", opts)
 vim.keymap.set("v", "<A-o>", "<gv", opts)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
-vim.keymap.set("n", "<S-Plus>",  ":%s/^  /\t/g", opts)
+vim.keymap.set("n", "<S-KPlus>",  ":%s/^  /\t/g", opts)
 vim.keymap.set("n", "<S-Minus>", ":%s/^\t/  /g", opts)
 
 vim.keymap.set("n", "x", '"_x', opts)

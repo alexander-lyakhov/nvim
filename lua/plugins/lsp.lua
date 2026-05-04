@@ -177,6 +177,7 @@ return {
 			-- wc_ls = { filetypes = { 'html', 'vue', 'js', 'ts' } },
 			cssls = {},
 			vls = {},
+			rust_analyzer = {},
 			-- typescript_language-server = {},
 		}
 
