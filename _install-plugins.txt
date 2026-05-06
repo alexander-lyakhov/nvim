@@ -13,3 +13,9 @@ Indentline
 
 Telescope File Browser
 	https://github.com/nvim-telescope/telescope-file-browser.nvim
+
+Autotag
+	https://github.com/craigemery/vim-autotag
+
+Toggleterm
+	https://github.com/akinsho/toggleterm.nvim

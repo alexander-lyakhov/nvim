@@ -123,10 +123,13 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.HINT]  = "󰌵",
 		},
 		linehl = {
-			[vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+			-- [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
 		},
 		numhl = {
-			[vim.diagnostic.severity.WARN] = 'WarningMsg',
+			[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+			[vim.diagnostic.severity.WARN] = "WarningMsg",
+			[vim.diagnostic.severity.HINT] = "DiagnosticHint",
+			[vim.diagnostic.severity.INFO] = "DiagnosticInfo",
 		},
 	},
 
