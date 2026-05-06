@@ -165,6 +165,7 @@ return {
 					},
 				},
 			},
+			-- @@@ LSP Servers
 			clangd = {},
 			jsonls = {},
 			sqlls = {},
@@ -177,10 +178,14 @@ return {
 			html = { filetypes = { 'html', 'twig', 'hbs', 'vue' } },
 			-- wc_ls = { filetypes = { 'html', 'vue', 'js', 'ts' } },
 			cssls = {},
-			vue_ls = {},
+			ts_ls = {},
+			vue_ls = {filetypes = { 'vue' }},
+			vtsls = {},
 			-- vetur_vls = {},
 			rust_analyzer = {},
-			-- typescript_language-server = {},
+			pyright = {},
+			-- tsserver = {},
+			eslint = {},
 		}
 
 		-- Ensure the servers and tools above are installed

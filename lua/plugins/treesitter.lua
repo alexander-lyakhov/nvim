@@ -7,19 +7,22 @@ return {
 	-- require('nvim-treesitter').setup ({
 	opt =  {
 		ensure_installed = {
+			"c",
+			"c++",
+			"rust",
 			"lua",
+			"sql",
 			"python",
 			"javascript",
 			"typescript",
+			"typescriptvue",
 			"vim",
 			"vimdoc",
-			"sql",
-			"rust",
 			"json",
 			"html",
 			"css",
-			"c",
-			"c++",
+			"cass",
+			"scss",
 		},
 
 		sync_install = false,

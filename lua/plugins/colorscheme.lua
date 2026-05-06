@@ -37,17 +37,6 @@ return {
 		end
 	},
 
-	-- @@@ ayu
-	ayu = {
-		"Luxed/ayu-vim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			vim.cmd("colorscheme ayu")
-			vim.g.ayucolor = "mirage"
-		end,
-	},
-
 	-- @@@ nord
 	nord = {
 		"shaunsingh/nord.nvim",
@@ -68,10 +57,13 @@ return {
 		end
 	},
 
-    olive = {
-    	"vimcolorschemes/olive-crt.nvim",
-    	lazy = false,
-    	priority = 1000,
-    	opts = {},
-    }
+	-- @@@ catppuccin
+	catppuccin = {
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+
+		config = function()
+		end
+	},
 }
