@@ -21,6 +21,7 @@ vim.keymap.set("i", "<A-v>", "<Esc>diw\"0Pb", opts)                     -- repla
 
 vim.keymap.set("n", "<A-d>", "diw", opts)                               -- delete a word under cursor
 vim.keymap.set("i", "<C-\\>", "<Esc>", opts)                            -- Return from insert mode
+vim.keymap.set("i", "<S-end>", "<C-o>v$h", opts)                            -- Return from insert mode
 
 -- @@@ Duplicate line
 vim.keymap.set("n", "<A-S-d>", "yy p", opts)
@@ -37,8 +38,41 @@ vim.keymap.set("v", "<A-o>", "<gv", opts)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
-vim.keymap.set("n", "<S-KPlus>",  ":%s/^  /\t/g", opts)
-vim.keymap.set("n", "<S-Minus>", ":%s/^\t/  /g", opts)
+--
+-- Replace 2 spaces with tab
+--
+vim.keymap.set("n", "<A-->",  function()
+	local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+
+	for i, line in ipairs(lines) do
+		local indent = line:match("^\t+")
+		if indent then
+			local spaces = string.rep("  ", #indent)
+			lines[i] = spaces .. line:sub(#indent + 1)
+		end
+	end
+
+	vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+end, opts)
+
+--
+-- Replace tab with 2 spaces
+--
+vim.keymap.set("n", "<A-+>",  function()
+	local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+
+	for i, line in ipairs(lines) do
+		local indent = line:match("^( +)")
+		if indent then
+			local tabs = string.rep("\t", math.floor(#indent / 2))
+			local rest = line:sub(#indent + 1)
+			local leftover = string.rep(" ", #indent % 2)
+			lines[i] = tabs .. leftover .. rest
+		end
+	end
+
+	vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+end, opts)
 
 vim.keymap.set("n", "x", '"_x', opts)
 vim.keymap.set("v", "p", '"_dP', opts)
@@ -69,6 +103,9 @@ vim.keymap.set("n", "<A-9>", "9gt", opts)
 vim.keymap.set("n", "<A-w>", "<C-w>T", opts)
 vim.keymap.set("n", "<A-.>", ":+tabmove<CR>", opts)
 vim.keymap.set("n", "<A-,>", ":-tabmove<CR>", opts)
+
+vim.keymap.set("n", "1", ":bprev<CR>", opts)
+vim.keymap.set("n", "2", ":bnext<CR>", opts)
 
 -- @@@ Marks
 vim.keymap.set("n", "<C-1>", "`1", opts)
