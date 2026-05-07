@@ -70,6 +70,7 @@ vim.keymap.set("n", "<A-,>", ":-tabmove<CR>", opts)
 
 vim.keymap.set("n", "1", ":bprev<CR>", opts)
 vim.keymap.set("n", "2", ":bnext<CR>", opts)
+vim.keymap.set("n", "<leader>x", ":bd<CR>", opts) -- Close current buffer
 
 -- @@@ Marks
 vim.keymap.set("n", "<C-1>", "`1", opts)

@@ -3,9 +3,9 @@ return {
 	version = "*",
 	opts = {
 		open_mapping = [[<A-0>]],
-		direction = "float",
+		-- direction = "float",
 		-- direction = "horizontal",
-		-- direction = "tab",
+		direction = "tab",
 
 		float_opts = {
 			border = "single",
