@@ -1,21 +1,21 @@
 
-Comments
+[+] Comments
 	https://github.com/terrortylor/nvim-comment
 
-Autopairs
+[+] Autopairs
 	https://github.com/windwp/nvim-autopairs
 
-GitSigns:
+[+] GitSigns:
 	https://github.com/lewis6991/gitsigns.nvim
 
-Indentline
+[-] Indentline
 	https://github.com/lukas-reineke/indent-blankline.nvim
 
-Telescope File Browser
+[+] Telescope File Browser
 	https://github.com/nvim-telescope/telescope-file-browser.nvim
 
-Autotag
+[-] Autotag
 	https://github.com/craigemery/vim-autotag
 
-Toggleterm
+[+] Toggleterm
 	https://github.com/akinsho/toggleterm.nvim

@@ -24,7 +24,7 @@ vim.keymap.set("i", "<C-\\>", "<Esc>", opts)                            -- Retur
 vim.keymap.set("i", "<S-end>", "<C-o>v$h", opts)                        -- Select to the end of line
 
 -- @@@ Duplicate line
-vim.keymap.set("n", "<A-S-d>", "yy p", opts)
+-- vim.keymap.set("n", "<A-S-d>", "yy p", opts)
 vim.keymap.set("v", "<A-S-d>", "y P", opts)
 
 -- @@@ Shift selected code to the right / left
@@ -176,4 +176,62 @@ vim.keymap.set("n", "<A-->",  function()
 	end
 
 	vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+end, opts)
+
+--
+-- Move current line down
+--
+vim.keymap.set("n", "<C-A-Down>", function()
+	local pos = vim.api.nvim_win_get_cursor(0)
+	local current_line_index = pos[1]
+	local buf_height = vim.api.nvim_buf_line_count(0)
+
+	if current_line_index < buf_height  then
+		local line = vim.api.nvim_get_current_line()
+
+		vim.api.nvim_del_current_line()
+		vim.api.nvim_buf_set_lines(0, current_line_index, current_line_index, false, {line})
+		vim.api.nvim_win_set_cursor(0, {current_line_index + 1, pos[2]})
+	end
+end, opts)
+
+--
+-- Move current line up
+--
+vim.keymap.set("n", "<C-A-Up>", function()
+	local pos = vim.api.nvim_win_get_cursor(0)
+	local current_line_index = pos[1]
+
+	if current_line_index > 1 then
+		local line = vim.api.nvim_get_current_line()
+
+		vim.api.nvim_del_current_line()
+		vim.api.nvim_buf_set_lines(0, current_line_index - 2, current_line_index - 2, false, {line})
+		vim.api.nvim_win_set_cursor(0, {current_line_index - 1, pos[2]})
+	end
+end, opts)
+
+--
+-- Duplicate current line
+--
+vim.keymap.set("n", "<A-S-d>", function()
+
+	local pos = vim.api.nvim_win_get_cursor(0)
+	local current_line_index = pos[1]
+	local line = vim.api.nvim_get_current_line()
+
+	vim.api.nvim_buf_set_lines(
+		0,
+		current_line_index,
+		current_line_index,
+		false,
+		{line}
+	)
+
+	vim.api.nvim_win_set_cursor(0, {
+		current_line_index + 1,
+		pos[2]
+	})
+
+	vim.print(current_line_index)
 end, opts)
