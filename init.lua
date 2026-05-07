@@ -27,8 +27,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("core.lazy")
-require("core.keymaps")
 require("core.options")
+require("core.keymaps")
+require("core.lazy")
 
 vim.cmd.colorscheme("everforest")
