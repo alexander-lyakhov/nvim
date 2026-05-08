@@ -48,6 +48,8 @@ vim.keymap.set("n", "<Esc>", ":noh<CR>", opts)
 -- @@@ Scroll viewport
 vim.keymap.set("n", "<A-j>", "<C-e>", opts)
 vim.keymap.set("n", "<A-k>", "<C-y>", opts)
+vim.keymap.set("n", "@", "<C-e>", opts)
+vim.keymap.set("n", "!", "<C-y>", opts)
 vim.keymap.set("n", "<C-Down>", "<C-e>", opts)
 vim.keymap.set("n", "<C-Up>", "<C-y>", opts)
 vim.keymap.set("n", "<C-\\>", "<C-e>", opts)

@@ -22,6 +22,7 @@ require("lazy").setup({
 	require("plugins.lsp"),
 	require("plugins.blink"),
 	require("plugins.toggleterm"),
+	require("plugins.bqf"),
 
 	--]]
 	--
@@ -53,62 +54,6 @@ require("lazy").setup({
 		end
 	},
 
-	--
-	-- @@@ LSP
-	--
-
-	--[[
-	{
-		"hrsh7th/cmp-buffer",
-	},
-	{
-		"hrsh7th/cmp-path",
-	},	
-	{
-		"hrsh7th/cmp-cmdline",
-	},
-	{
-		"hrsh7th/cmp-nvim-lsp",
-	},
-	{
-		"hrsh7th/nvim-cmp",
-	},
-	--]]
-	
-	--
-	-- @@@ Blink
-	--
-	--[[	
-	{
-		'saghen/blink.cmp',
-		dependencies = {
-			'rafamadriz/friendly-snippets',
-			'hrsh7th/nvim-cmp',
-		},
-		version = '1.*',
-		opts = {
-			source = {
-				default = {'lsp', 'path', 'snippets', 'buffer', 'cmdline'},
-			},
-			keymap = { preset = 'enter' },
-			completion = {
-				menu = {
-					draw = {
-						columns = { { 'item_idx' }, { 'label', 'label_description', gap = 1 } },
-						components = {
-							item_idx = {
-								text = function(ctx) return ctx.idx == 10 and '0' or ctx.idx >= 10 and ' ' or tostring(ctx.idx) end,
-								highlight = 'BlinkCmpItemIdx' -- optional, only if you want to change its color
-							}
-						}
-					}
-				},
-				documentation = { auto_show = true}
-			},
-		},
-	},
-	--]]
-
 	{
 		"vxpm/ferris.nvim",
 		opts = {},
@@ -127,11 +72,11 @@ require("lazy").setup({
 		"mason-org/mason.nvim",
 		opts = {}
 	},
-
+	
 	{
 		"nvim-mini/mini.icons"
 	},
-
+	
 	{
 		-- Hints keybinds
 		'folke/which-key.nvim',

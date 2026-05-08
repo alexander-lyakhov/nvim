@@ -180,11 +180,12 @@ return {
 			cssls = {},
 			ts_ls = {},
 			vue_ls = {filetypes = { 'vue' }},
-			vtsls = {},
 			-- vetur_vls = {},
 			rust_analyzer = {},
 			pyright = {},
-			-- tsserver = {},
+			-- tsserver = {cmd = {'typescript-language-server', '--stdio'}},
+			tsserver,
+			vtsls = {},
 			eslint = {},
 		}
 
