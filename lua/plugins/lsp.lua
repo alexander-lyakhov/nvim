@@ -185,8 +185,8 @@ return {
 			pyright = {},
 			-- tsserver = {cmd = {'typescript-language-server', '--stdio'}},
 			tsserver,
-			vtsls = {},
-			eslint = {},
+			vtsls,
+			eslint,
 		}
 
 		-- Ensure the servers and tools above are installed
