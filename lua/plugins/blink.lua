@@ -37,7 +37,6 @@ return {
 						}
 					}--]]
 				},
-				
 			},
 
 			documentation = {
@@ -45,7 +44,6 @@ return {
 				auto_show_delay_ms = 0,
 				window = {
 					border = 'single',
-					padding = 1,
 					-- winhighlight = 'Normal:HLDocs,FloatBorder:CursorLineFold,EndOfBuffer:WinSeparator,NormalFloat:NonText',
 					winhighlight = 'Normal:HLDocs,FloatBorder:CursorLineFold,EndOfBuffer:WinSeparator,NormalFloat:CursorLineNr',
 				}

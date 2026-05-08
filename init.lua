@@ -32,7 +32,7 @@ require("core.keymaps")
 require("core.lazy")
 
 -- vim.cmd.colorscheme("everforest")
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("catppuccin-macchiato")
 
 local opts = { noremap = true, silent = true }
 

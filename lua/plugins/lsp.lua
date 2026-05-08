@@ -1,3 +1,7 @@
+--
+-- https://github.com/vuejs/language-tools/discussions/5931
+--
+
 return {
 	'neovim/nvim-lspconfig',
 	dependencies = {
@@ -6,7 +10,7 @@ return {
 		-- mason-lspconfig:
 		-- - Bridges the gap between LSP config names (e.g. "lua_ls") and actual Mason package names (e.g. "lua-language-server").
 		-- - Used here only to allow specifying language servers by their LSP name (like "lua_ls") in `ensure_installed`.
-		-- - It does not auto-configure servers — we use vim.lsp.config() + vim.lsp.enable() explicitly for full control.
+		-- - It does not auto-configure servers ï¿½ we use vim.lsp.config() + vim.lsp.enable() explicitly for full control.
 		'mason-org/mason-lspconfig.nvim',
 		-- mason-tool-installer:
 		-- - Installs LSPs, linters, formatters, etc. by their Mason package name.
@@ -117,6 +121,26 @@ return {
 							vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
 						end,
 					})
+
+					vim.api.nvim_create_autocmd('FileType', {
+						pattern = 'vue',
+						callback = function(args)
+							local root_dir = vim.fs.root(args.buf, { 'package.json', 'tsconfig.json', 'jsconfig.json' })
+							local init_options = vim.deepcopy(servers.ts_ls.init_options)
+
+							local mason_path = vim.fn.stdpath('data') .. '/mason/packages/vue-language-server/node_modules/@vue/language-server'
+							if vim.fn.isdirectory(mason_path) == 1 then
+								init_options.plugins[1].location = mason_path
+							end
+
+							vim.lsp.start({
+								name = 'ts_ls',
+								cmd = { 'typescript-language-server', '--stdio' },
+								root_dir = root_dir,
+								capabilities = capabilities,
+							})
+						end,
+					})
 				end
 
 				-- The following code creates a keymap to toggle inlay hints in your
@@ -178,15 +202,21 @@ return {
 			html = { filetypes = { 'html', 'twig', 'hbs', 'vue' } },
 			-- wc_ls = { filetypes = { 'html', 'vue', 'js', 'ts' } },
 			cssls = {},
-			ts_ls = {},
-			vue_ls = {filetypes = { 'vue' }},
-			-- vetur_vls = {},
+			ts_ls = {
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = vim.fn.stdpath('data') .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+							languages = { 'javascript', 'typescript', 'vue' }
+						},
+					}
+				},
+				filetypes = { 'javascript', 'javascriptreact', 'javascript.jsx', 'typescript', 'typescriptreact', 'typescript.tsx', 'vue' },
+			},
+			vue_ls = {},
 			rust_analyzer = {},
 			pyright = {},
-			-- tsserver = {cmd = {'typescript-language-server', '--stdio'}},
-			tsserver,
-			vtsls,
-			eslint,
 		}
 
 		-- Ensure the servers and tools above are installed
