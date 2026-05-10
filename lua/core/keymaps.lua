@@ -21,6 +21,8 @@ vim.keymap.set("i", "<A-v>", "<Esc>diw\"0Pb", opts)                     -- repla
 
 vim.keymap.set("n", "<A-d>", "diw", opts)                               -- delete a word under cursor
 vim.keymap.set("i", "<C-\\>", "<Esc>", opts)                            -- Return from insert mode
+vim.keymap.set("i", "jk", "<Esc>", opts)                            -- Return from insert mode
+vim.keymap.set("i", "kj", "<Esc>", opts)                            -- Return from insert mode
 vim.keymap.set("i", "<S-end>", "<C-o>v$h", opts)                        -- Select to the end of line
 
 -- @@@ Duplicate line

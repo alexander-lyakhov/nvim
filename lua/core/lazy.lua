@@ -15,14 +15,13 @@ require("lazy").setup({
 	require("plugins.lualine"),
 	require("plugins.telescope"),
 	require("plugins.treesitter"),
-	require("plugins.autopairs"),
 	require("plugins.gitsigns"),
 	require("plugins.comments"),
 	require("plugins.aerial"),
 	require("plugins.lsp"),
 	require("plugins.blink"),
 	require("plugins.toggleterm"),
-	require("plugins.bqf"),
+	-- require("plugins.bqf"),
 
 	--]]
 	--
@@ -95,5 +94,15 @@ require("lazy").setup({
 				},
 			},
 		},
+	},
+
+	{
+		'kevinhwang91/nvim-bqf',
+	},
+
+	{
+		'windwp/nvim-autopairs',
+		event = 'InsertEnter',
+		opts = {},
 	},
 })
