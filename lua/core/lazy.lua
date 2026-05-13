@@ -21,8 +21,6 @@ require("lazy").setup({
 	require("plugins.lsp"),
 	require("plugins.blink"),
 	require("plugins.toggleterm"),
-	-- require("plugins.bqf"),
-
 	--]]
 	--
 	-- @@@ TreeSitter
@@ -72,15 +70,21 @@ require("lazy").setup({
 		opts = {}
 	},
 	
+	--
+	-- @@@ MiniIcons
+	--
 	{
 		"nvim-mini/mini.icons"
 	},
 	
+	--
+	-- @@@ Which Key
+	--
 	{
 		-- Hints keybinds
 		'folke/which-key.nvim',
 		opts = {
-			delay = 1000,
+			delay = 500,
 			win = {
 				border = {
 					{ '┌', 'FloatBorder' },
@@ -96,10 +100,16 @@ require("lazy").setup({
 		},
 	},
 
+	--
+	-- @@@ Bqf
+	--
 	{
 		'kevinhwang91/nvim-bqf',
 	},
 
+	--
+	-- @@@ Autopairs
+	--
 	{
 		'windwp/nvim-autopairs',
 		event = 'InsertEnter',
