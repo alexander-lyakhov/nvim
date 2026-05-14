@@ -21,17 +21,6 @@ require("lazy").setup({
 	require("plugins.lsp"),
 	require("plugins.blink"),
 	require("plugins.toggleterm"),
-	--]]
-	--
-	-- @@@ TreeSitter
-	--
-	--[[
-	{
-		'nvim-treesitter/nvim-treesitter',
-		lazy = false,
-		build = ':TSUpdate',
-	},
-	--]]
 	
 	--
 	-- @@@ Telescope
@@ -115,4 +104,14 @@ require("lazy").setup({
 		event = 'InsertEnter',
 		opts = {},
 	},
+
+	--
+	-- @@@ Split maximizer
+	--
+	{
+		'szw/vim-maximizer',
+		keys = {
+			{ '<leader>mm', '<cmd>MaximizerToggle<CR>', desc = '[M]aximize / [M]inimize a split'},
+		}
+	}
 })

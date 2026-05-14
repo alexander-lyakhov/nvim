@@ -82,8 +82,8 @@ return {
 			-- tailwindcss = {},
 			-- graphql = {},
 			html = { filetypes = { 'html', 'twig', 'hbs', 'vue' } },
-			-- wc_ls = { filetypes = { 'html', 'vue', 'js', 'ts' } },
 			cssls = {},
+			emmet_ls = {},
 			ts_ls = {
 				init_options = {
 					plugins = {
