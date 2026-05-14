@@ -58,7 +58,7 @@ vim.keymap.set("n", "<C-\\>", "<C-e>", opts)
 vim.keymap.set("n", "<C-]>", "<C-y>", opts)
 
 -- @@@ Tabs
-vim.keymap.set("n", "<C-t>", ":tabnew<CR>", opts)
+vim.keymap.set("n", "<C-n>", ":tabnew<CR>", opts)
 vim.keymap.set("n", "<A-1>", "1gt", opts)
 vim.keymap.set("n", "<A-2>", "2gt", opts)
 vim.keymap.set("n", "<A-3>", "3gt", opts)
