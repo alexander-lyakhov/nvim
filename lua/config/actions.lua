@@ -90,6 +90,7 @@ function AlignAndFormat(pattern, separator)
 end
 
 vim.keymap.set("n", "<A-S-f>", function()
-	AlignAndFormat('^(%s*[^:]+):%s*(.+)$', ':')
-	AlignAndFormat('^(%s*[^:]+)=%s*(.+)$', '=')
+	-- AlignAndFormat('^(%s*[^:]+):%s*(.+)$', ':')
+	AlignAndFormat('^(.-):%s*(.+)$', ':')
+	AlignAndFormat('^(.-)=%s*(.+)$', '=')
 end, opts)
