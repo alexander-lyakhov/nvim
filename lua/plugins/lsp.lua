@@ -144,7 +144,7 @@ return {
 				map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
 				-- Code format
-				map('<leader>fm', vim.lsp.buf.format, '[G]oto [D]eclaration')
+				map('<leader>fm', vim.lsp.buf.format, '[F]ormat')
 
 				-- Opens a popup that displays documentation about the word under your cursor
 				--  See `:help K` for why this keymap

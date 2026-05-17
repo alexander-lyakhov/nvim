@@ -10,7 +10,7 @@ return {
 			require("everforest").setup({
 				vim.cmd.colorscheme('everforest'),
 				italics = false,
-				background = "hard",
+				background = 'hard',
 				transparent_background_level = 0,
 				ui_contrast = "high",
 
