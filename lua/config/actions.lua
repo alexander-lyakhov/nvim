@@ -94,3 +94,31 @@ vim.keymap.set("n", "<A-S-f>", function()
 	AlignAndFormat('^(.-):%s*(.+)$', ':')
 	AlignAndFormat('^(.-)=%s*(.+)$', '=')
 end, opts)
+
+
+--
+-- @@@@ Build and Run C/C++ code
+--
+local Terminal = require("toggleterm.terminal").Terminal
+
+vim.keymap.set("n", "<F9>", function()
+	local file = vim.fn.expand("%:t")
+	local output = vim.fn.expand("%:t:r") .. ".exe"
+	local ext = vim.fn.expand("%:e")
+
+	local cmd = ext == 'cpp'
+		and 'echo COMPILING... && g++ "' .. file .. '" -std=c++17 -Os -s -o "' .. output  .. '" && "' .. output .. '"'
+		or  'echo COMPILING... && gcc "' .. file .. '" -Os -s -o "' .. output  .. '" && "' .. output .. '"'
+
+	-- vim.print(cmd)
+	
+	local term = Terminal:new({
+		cmd = cmd,
+		direction = "float",
+		close_on_exit = false,
+		hidden = true,
+	})
+
+	term:toggle()
+	
+end, { desc = "Build and Run C/C++ code" })
