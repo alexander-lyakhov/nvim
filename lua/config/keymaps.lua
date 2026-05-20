@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>rr", ":source c:\\Users\\Alex\\AppData\\Local\\nvim
 -- vim.keymap.set("n", "<A-e>", ":vnew<CR> :Ex<CR>", opts)
 vim.keymap.set("n", "<leader>vv", ":botright vnew<CR>", opts)
 vim.keymap.set("n", "<Home>", "^", opts)
-vim.keymap.set("n", "<F2>", ":w<CR>", opts)
+vim.keymap.set("n", "<F2>", ":w!<CR>", opts)
 vim.keymap.set("i", "<F2>", "<Esc>:w<CR>", opts)
 vim.keymap.set("n", "<A-F3>", ":q!<CR>")                                -- force close current tab
 vim.keymap.set("n", "<A-x>", ":q!<CR>")                                 -- force close current tab
