@@ -19,12 +19,29 @@ vim.keymap.set("n", "<A-y>", "mm^v$hy`m`<Esc>", opts)                   -- copy 
 vim.keymap.set("n", "<A-v>", "diw\"0Pb", opts)                          -- replace word under cursor with text from clipboard
 vim.keymap.set("i", "<A-v>", "<Esc>diw\"0Pb", opts)                     -- replace word under cursor with text from clipboard
 
-vim.keymap.set("n", "<A-d>", "diwi", opts)                               -- delete a word under cursor
+vim.keymap.set("n", "<A-d>", "diwi", opts)                              -- delete a word under cursor
 vim.keymap.set("i", "<C-\\>", "<Esc>", opts)                            -- Return from insert mode
 vim.keymap.set("i", "jk", "<Esc>", opts)                                -- Return from insert mode
 vim.keymap.set("i", "kj", "<Esc>", opts)                                -- Return from insert mode
 vim.keymap.set("i", "<S-end>", "<C-o>v$h", opts)                        -- Select to the end of line
-vim.keymap.set("n", "<A-'>", "viw", opts)                              -- Select a word
+vim.keymap.set("n", "<A-'>", "viw", opts)                               -- Select a word
+
+-- @@@ Selection
+vim.keymap.set("i", "<S-Left>", "<Esc>v", opts)     
+vim.keymap.set("n", "<S-Left>", "vh", opts)     
+vim.keymap.set("v", "<S-Left>", "h", opts)
+
+vim.keymap.set("i", "<S-Right>", "<Esc>lv", opts)     
+vim.keymap.set("n", "<S-Right>", "vl", opts)     
+vim.keymap.set("v", "<S-Right>", "l", opts)
+
+vim.keymap.set("i", "<S-Up>", "<Esc>V", opts)     
+vim.keymap.set("n", "<S-Up>", "V", opts)     
+vim.keymap.set("v", "<S-Up>", "k", opts)
+
+vim.keymap.set("i", "<S-Down>", "<Esc>V", opts)     
+vim.keymap.set("n", "<S-Down>", "V", opts)     
+vim.keymap.set("v", "<S-Down>", "j", opts)     
 
 -- @@@ Duplicate line
 -- vim.keymap.set("n", "<A-S-d>", "yy p", opts)
@@ -73,12 +90,12 @@ vim.keymap.set("n", "<A-w>", "<C-w>T", opts)
 vim.keymap.set("n", "<A-.>", ":+tabmove<CR>", opts)
 vim.keymap.set("n", "<A-,>", ":-tabmove<CR>", opts)
 
-vim.keymap.set("n", "1", ":bprev<CR>", opts)
-vim.keymap.set("n", "2", ":bnext<CR>", opts)
+vim.keymap.set("n", "C-1", ":bprev<CR>", opts)
+vim.keymap.set("n", "C-2", ":bnext<CR>", opts)
 vim.keymap.set("n", "<leader>x", ":bd<CR>", opts) -- Close current buffer
 
 -- @@@ Marks
-vim.keymap.set("n", "<C-1>", "`1", opts)
+-- vim.keymap.set("n", "<C-1>", "`1", opts)
 
 -- @@@ Split view navigation
 vim.keymap.set("n", "<A-Right>", "<C-w><Right>", opts)
@@ -88,7 +105,7 @@ vim.keymap.set("n", "<A-Up>", "<C-w><Up>", opts)
 
 vim.keymap.set("n", "<C-S-Up>", ":resize +1<CR>", opts)
 vim.keymap.set("n", "<C-S-Down>", ":resize -1<CR>", opts)
-vim.keymap.set("n", "<C--S-Left>", ":vertical resize +1<CR>", opts)
+vim.keymap.set("n", "<C-S-Left>", ":vertical resize +1<CR>", opts)
 vim.keymap.set("n", "<C-S-Right>", ":vertical resize -1<CR>", opts)
 
 -- @@@ Jump between breckets
