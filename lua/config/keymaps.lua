@@ -90,8 +90,8 @@ vim.keymap.set("n", "<A-w>", "<C-w>T", opts)
 vim.keymap.set("n", "<A-.>", ":+tabmove<CR>", opts)
 vim.keymap.set("n", "<A-,>", ":-tabmove<CR>", opts)
 
-vim.keymap.set("n", "C-1", ":bprev<CR>", opts)
-vim.keymap.set("n", "C-2", ":bnext<CR>", opts)
+vim.keymap.set("n", "<A-o>", ":bprev<CR>", opts)
+vim.keymap.set("n", "<A-p>", ":bnext<CR>", opts)
 vim.keymap.set("n", "<leader>x", ":bd<CR>", opts) -- Close current buffer
 
 -- @@@ Marks
