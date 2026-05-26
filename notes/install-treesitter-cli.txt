@@ -1,0 +1,8 @@
+1. Install:
+	npm install -g tree-sitter-cli
+
+2. Check from console:
+	tree-sitter --version
+
+3. Check from NeoVim:
+	 :checkhealth nvim-treesitter
