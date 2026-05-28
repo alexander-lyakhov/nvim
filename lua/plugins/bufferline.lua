@@ -9,6 +9,7 @@ return {
 			options = {
 				mode = "tabs", -- set to "tabs" to only show tabpages instead
 				style_preset = bufferline.style_preset.default, -- or bufferline.style_preset.minimal,
+				-- style_preset = bufferline.style_preset.minimal, -- or bufferline.style_preset.minimal,
 				themable = true, -- allows highlight groups to be overriden i.e. sets highlights as default
 				numbers = "none", -- "none" | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
 				close_command = "bdelete! %d",       -- can be a string | function, | false see "Mouse actions"
@@ -27,7 +28,7 @@ return {
 				max_name_length = 18,
 				max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
 				truncate_names = false, -- whether or not tab names should be truncated
-				tab_size = 18,
+				tab_size = 12,
 				diagnostics = "nvim_lsp", -- false | "nvim_lsp" | "coc",
 				diagnostics_update_in_insert = false, -- only applies to coc
 				diagnostics_update_on_event = true, -- use nvim's diagnostic handler
@@ -63,7 +64,7 @@ return {
 				-- can also be a table containing 2 custom separators
 				-- [focused and unfocused]. eg: { '|', '|' }
 				separator_style = "slant", --"slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
-				enforce_regular_tabs = true,
+				enforce_regular_tabs = false,
 				always_show_bufferline = true,
 				auto_toggle_bufferline = true,
 				pick = {
