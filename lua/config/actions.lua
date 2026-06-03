@@ -1,6 +1,24 @@
 local opts = { noremap = true, silent = true }
 
 --
+-- @@@ Replace 4 spaces with 1 tab
+--
+vim.keymap.set("n", "<S-Tab>", function()
+	local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+
+	for i, line in ipairs(lines) do
+		local left   = line:match("^%s*")
+		local right  = line:match("%S.*") or ''
+
+		if left:match('    ') then
+			lines[i] = left:gsub('    ', '\t') .. right
+		end
+	end
+
+	vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+end, opts)
+
+--
 -- @@@ Replace tab with 2 spaces
 --
 vim.keymap.set("n", "<A-+>",  function()
