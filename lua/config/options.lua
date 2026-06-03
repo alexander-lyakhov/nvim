@@ -32,3 +32,38 @@ vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 3
 
 -- vim.o.winborder = "single"
+
+--
+-- @@@ Define Whitespaces
+-- vim.cmd [[set listchars=tab:⇢\ ,space:.,trail:•,precedes:⇠,extends:⟩,nbsp:␣,eol:↲]]
+--
+vim.opt.listchars = {
+	-- tab = "→ ",
+	tab = "⇢ ",
+	space = "·",
+	trail = "•",
+	nbsp = "␣",
+	extends = "»",
+	precedes = "«",
+	eol = "↲",
+}
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		vim.api.nvim_set_hl(0,
+			"Whitespace",
+			vim.api.nvim_get_hl(0, {name = 'PreInsert'}) -- ComplMatchIns -- PreInsert --
+		)
+	vim.api.nvim_set_hl(0,
+			"NonText",
+			vim.api.nvim_get_hl(0, {name = 'PreInsert'}) -- ComplMatchIns -- PreInsert --
+		)
+	end,
+})
+
+--
+-- @@@ Toggle Whitespaces
+--
+vim.keymap.set("n", "<A-s>", function()
+	vim.cmd [[set list!]]
+end)
