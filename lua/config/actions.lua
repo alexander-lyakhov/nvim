@@ -3,8 +3,7 @@ local opts = { noremap = true, silent = true }
 --
 -- @@@ Remove trailing spaces
 --
---[[
-vim.keymap.set("n", "<End>", function()
+vim.keymap.set("n", "<S-End>", function()
 	local pos = vim.api.nvim_win_get_cursor(0)
 	local current_line_index = pos[1]
 	local line = vim.api.nvim_get_current_line()
@@ -20,7 +19,7 @@ vim.keymap.set("n", "<End>", function()
 	)
 	vim.cmd("normal $")
 end)
---]]
+
 --
 -- @@@ Replace 4 spaces with 1 tab
 --
