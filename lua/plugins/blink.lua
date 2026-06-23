@@ -19,6 +19,7 @@ return {
 
 			-- ['<C-p>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
 			-- ['<A-p>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
+			['<A-n>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
 		},
 
 		completion = {
