@@ -1,0 +1,5 @@
+- Setup dependencies
+	sudo apt update && sudo apt install -y python3-pip python3-venv nodejs npm git curl build-essential unzip
+
+- Setup unzip (included in previous command)
+	sudo apt update && sudo apt install unzip -y
