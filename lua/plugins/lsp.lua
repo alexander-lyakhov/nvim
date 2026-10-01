@@ -73,6 +73,7 @@ return {
 			},
 			-- @@@ LSP Servers
 			clangd = {},
+			jdtls = {},
 			jsonls = {},
 			sqlls = {},
 			yamlls = {},
